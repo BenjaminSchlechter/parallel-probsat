@@ -1,0 +1,24 @@
+
+/* eps & cb values from probSAT version SC13_v2 from Adrian Balint:
+	eps = 1.0;
+	if (!cb_spec) {
+		if (maxClauseSize <= 3) {
+			cb = 2.06;
+			eps = 0.9;
+
+		} else if (maxClauseSize <= 4)
+			cb = 2.85;
+		else if (maxClauseSize <= 5)
+			cb = 3.7;
+		else if (maxClauseSize <= 6)
+			cb = 5.1;
+		else
+			cb = 5.4;
+	}
+	if (!fct_spec) {
+		if (maxClauseSize < 4)
+			fct = 0; // polynomial
+		else
+			fct = 1; // exponential
+	}
+*/

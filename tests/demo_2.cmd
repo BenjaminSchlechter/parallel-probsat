@@ -1,0 +1,4 @@
+add_workers 2
+add_file 10 10000000 ../tests/gen_n900_m3840_k3SAT_seed4244421687_mod_s6863228_p0.00972225738663696.cnf
+wait_for_server
+exit

@@ -1,0 +1,64 @@
+
+Parallel ProbSAT
+
+A highly parallel ProbSAT solver written in C++ using OpenMPI and bitsery.
+Developed as part of the Algorithm Engineering Project at Ulm University.
+
+The ProbSAT Algorithm is presented in:
+"Choosing Probability Distributions for Stochastic Local Search
+and the Role of Make versus Break" by Adrian Balint, Uwe Schöning
+published in Lecture Notes in Computer Science, 2012, Volume 7317,
+Theory and Applications of Satisfiability Testing - SAT 2012, pages 16-29
+
+Adrian Balint's reference implementation can be found here:
+https://github.com/adrianopolus/probSAT
+
+This Project is an complete reimplementation in C++ with additional
+multi processor parallelization. It can be used to search for a solution
+of one boolean formula with multiple probSAT Instanzes in parallel.
+However as the sat solving code uses similar optimization strategies
+inspired by Adrian Balint's code the sat solving part (sat/ subfolder)
+is published under the same license (just read the license file).
+The per thread performance (flips per second) is somewhat smaller than
+the performance of Adrian Balint's implementation
+
+
+Dependencies:
+
+bitsery: github.com/fraillt/bitsery
+OpenMPI: www.open-mpi.org/
+
+
+How To Build:
+
+# if bitsery is not available system wide:
+git clone https://github.com/fraillt/bitsery.git
+
+mkdir build
+cd build
+cmake ..
+make
+
+
+Example how to use:
+./manager test _no_output_file ../tests/testcluster < ../tests/demo_2.cmd
+
+
+Important: Even after correctly finishing, the following OpenMPI error message may occur:
+--------------------------------------------------------------------------
+(null) has exited due to process rank 0 with PID 0 on
+node BPC exiting improperly. There are three reasons this could occur: ...
+--------------------------------------------------------------------------
+
+
+Contents:
+manager.cpp         parallel implementation
+probsat.cpp         single threaded version
+
+
+further programmcode:
+communication/      code for communication in the parallel version
+sat/				sat solving
+util/				additional code
+config.hpp			important config parameters
+
