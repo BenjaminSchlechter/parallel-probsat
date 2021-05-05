@@ -58,9 +58,9 @@ probsat.cpp         single threaded version
 
 further programmcode:
 communication/      code for communication in the parallel version
-sat/				sat solving
-util/				additional code
-tests/      files for testing/demo purposes, note:
-            permission to publish the 3 boolean formulas (*.cnf) was granted
-config.hpp			important config parameters
+sat/                sat solving
+util/               additional code
+tests/              files for testing/demo purposes, note:
+                    permission to publish the 3 boolean formulas (*.cnf) was granted
+config.hpp          important config parameters
 
